@@ -7,8 +7,8 @@ module.exports = {
   // 사용 가능한 규칙 세트
   extends: [
     // 'plugin:vue/vue3-essential', // Lv1
-    'plugin:vue/vue3-strongly-recommended', // Lv2
-    // 'plugin:vue/vue3-recommended', // Lv3
+    // 'plugin:vue/vue3-strongly-recommended', // Lv2
+   'plugin:vue/vue3-recommended', // Lv3
     'eslint:recommended'
   ],
   // 구문 분석할 패키지 설정(Babel, ES6^ => ES5)
