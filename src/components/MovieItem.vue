@@ -1,5 +1,6 @@
 <template>
-  <div
+  <RouterLink
+    :to="`/movie/${movie.imdbID}`"
     :style="{ backgroundImage: `url(${movie.Poster})` }"
     class="movie">
     <Loader
@@ -14,7 +15,7 @@
         {{ movie.Title }}
       </div>
     </div>
-  </div>
+  </RouterLink>
 </template>
 
 <script>
@@ -39,7 +40,13 @@ export default {
   },
   methods: {
     async init() {
-      await this.$loadImage(this.movie.Poster)
+      const poster = this.movie.Poster
+      if (!poster || poster === 'N/A') {
+        this.imageLoading = false
+        return
+      }
+
+      await this.$loadImage(poster)
       this.imageLoading = false
     }
   }
